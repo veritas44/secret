@@ -9,8 +9,8 @@
   "keywords": [
     "messenger"
   ],
-  "license": "GNU General Public License",
-  "homepage": "trysecret.tk",
+  "license": "MIT",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
