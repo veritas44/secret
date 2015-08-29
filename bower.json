@@ -1,0 +1,29 @@
+{
+  "name": "Secret Messenger",
+  "version": "1.0.0",
+  "authors": [
+    "Pavel Kupreev <iamkuper@gmail.com>"
+  ],
+  "description": "Anonymous RSA P2P open-source messenger",
+  "main": "index.html",
+  "keywords": [
+    "messenger"
+  ],
+  "license": "GNU General Public License",
+  "homepage": "trysecret.tk",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs-text": "~2.0.14",
+    "handlebars": "~3.0.3",
+    "requirejs": "~2.1.20",
+    "backbone": "~1.2.2",
+    "cryptico": "*",
+    "jquery": "~2.1.4"
+  }
+}
