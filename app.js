@@ -1,4 +1,4 @@
-define(['models/user'], function(user) {
+define(['router','models/user'], function(router ,user) {
 
 
 

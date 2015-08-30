@@ -12,25 +12,24 @@ define(['backbone', 'store', 'cryptico', 'SHA256'], function(Backbone, store, cr
 
 		save: function () {
 
-			console.log(this);
-
-			//store.set('User', this.toJSON());
+			store.set('User', this.toJSON());
 		
 		},
 
 		load: function() {
 
-		//	if (store.has('User')) this.set(store.get('User'));
+			if (store.has('User')) this.set(store.get('User'));
 
 		},
 
 
 		initialize: function() {
 
+
 			this.load();
+			
 			this.on('change', this.save, this);
 
-			this.login('testdfsdf', 'dsfsdfsdfsd');
 
 		},
 
@@ -46,15 +45,18 @@ define(['backbone', 'store', 'cryptico', 'SHA256'], function(Backbone, store, cr
 
 			var _self = this;
 
-			this.generateHash(email, password)
-				.then(_self.generatePrivateKey())
-				.then(_self.generatePublicKey())
-				.then(_self.trigger('login'));
-			
+			return new Promise(function(done) {
+				_self.generateHash(email, password)
+					.then(_self.generatePrivateKey())
+					.then(_self.generatePublicKey())
+					.then(done());
+			});
 
+			
 		},
 
 		generateHash: function(email, password) {
+
 
 			var _self = this;
 
@@ -64,7 +66,9 @@ define(['backbone', 'store', 'cryptico', 'SHA256'], function(Backbone, store, cr
 
 				_self.set('id', hash);
 
-				done();
+				console.log('hash');
+
+				done(_self);
 				
 			});
 
@@ -76,9 +80,11 @@ define(['backbone', 'store', 'cryptico', 'SHA256'], function(Backbone, store, cr
 
 			return new Promise(function(done) {
 
-				var key = cryptico.generateRSAKey(_self.get('id'), 3072);
+				var key = cryptico.generateRSAKey(_self.get('id'), 768);
 
 				_self.set('privateKey', key);
+
+				console.log('private');
 
 				done();
 
@@ -93,6 +99,8 @@ define(['backbone', 'store', 'cryptico', 'SHA256'], function(Backbone, store, cr
 			return new Promise(function(done) {
 
 				var key = cryptico.publicKeyString(_self.get('privateKey'));
+
+				console.log('public');
 
 				_self.set('publicKey', key);
 

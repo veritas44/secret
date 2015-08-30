@@ -3,6 +3,149 @@
 <head>
 	<title>Secret</title>
 	<script type="text/javascript" data-main="/init.js" src="/bower_components/requirejs/require.js"></script>
+	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <style>
+        body  { 
+            padding-top: 150px; 
+            background: #E6E9ED; 
+            font-family: 'Raleway', sans-serif;
+        }
+
+
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+
+    width: 300px;
+ 
+    /* just in case there no content*/
+    padding: 0px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 0px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-color: #fff;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: #fff;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: #656D78;
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: #434A54;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #656D78;
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color:  #434A54;
+}
+.logo {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+</style>
 </head>
 <body>
 
